@@ -10,8 +10,8 @@ body {
 
 #main {
 	width: 50rem;
-	margin: 2rem 2rem 4rem 2rem;
-	background-color: var(--white-color);
+	margin: 2.5rem 2rem 3rem 2rem;
+	background-color: var(--rgba-white-color);
 	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
 		rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
 		rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -23,6 +23,7 @@ body {
 	flex-direction: column;
 	align-items: center;
 	padding: 1rem;
+	border-radius: 1rem;
 }
 
 #main__dashboard > h6 {
@@ -117,17 +118,18 @@ body {
 }
 
 #main__playlist {
-	height: 35rem;
+	height: 37rem;
 	overflow-y: auto;
-	margin-top: 2rem;
+	margin-top: 1rem;
 	padding: 0 1rem;
+	border-radius: 1rem;
 }
 #main__playlist .active {
 	background-color: var(--background-color);
 }
 .playlist__song {
 	list-style: none;
-	margin: 0.5rem 0rem;
+	margin: 1rem 0rem;
 	color: var(--text-color);
 	text-decoration: none;
 	display: flex;
@@ -136,6 +138,11 @@ body {
 	padding: 1.5rem 2rem;
 	border-radius: 1rem;
 	cursor: pointer;
+	box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+	background-color: var(--white-color);
+}
+.playlist__song:first-child {
+	margin-top: 1rem;
 }
 .playlist__song:hover {
 	background-color: var(--background-color);

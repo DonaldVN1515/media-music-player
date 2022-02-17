@@ -25,6 +25,8 @@ const nextBtn = $('.js-next');
 const prevBtn = $('.js-prev');
 const repeatBtn = $('.js-repeat');
 const randomBtn = $('.js-random ');
+const durationTime = $('.js-duration ');
+const remainingTime = $('.js-remaining ');
 
 const audio = $('#audio');
 const progress = $('#progress');
@@ -301,10 +303,34 @@ const app = {
 
 		// Object.assign(this, this.config);
 	},
+	displayTime: function () {
+		const { duration, currentTime } = audio;
+
+		function formatTimer(number) {
+			const minutes = Math.floor(number / 60);
+			const seconds = Math.floor(number - minutes * 60);
+
+			return `${minutes < 10 ? '0' + minutes : minutes}:${
+				seconds < 10 ? '0' + seconds : seconds
+			}`;
+		}
+
+		durationTime.textContent = formatTimer(currentTime);
+
+		if (!duration) {
+			remainingTime.textContent = '00:00';
+		} else {
+			remainingTime.textContent = formatTimer(duration);
+		}
+
+		const timer = setInterval(this.displayTime, 100);
+	},
 	start: function () {
 		this.loadConfig;
 
 		this.defineProperties();
+
+		this.displayTime();
 
 		this.handleEvents();
 

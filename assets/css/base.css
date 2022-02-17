@@ -1,5 +1,6 @@
 :root {
-	--white-color: rgba(255, 255, 255, 0.8);
+	--rgba-white-color: rgba(255, 255, 255, 0.8);
+	--white-color: rgb(255, 255, 255);
 	--text-color: rgb(18, 18, 18);
 	--background-color: #f8e4c8;
 	--second-background-color: #fcb69f;
