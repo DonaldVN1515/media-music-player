@@ -20,7 +20,6 @@ const songName = $('.dashboard__song h3');
 const songImg = $('.dashboard__song img');
 const playBtn = $('.js-play');
 const playerBtn = $('.js-player');
-const playing = $('.js-playing');
 const nextBtn = $('.js-next');
 const prevBtn = $('.js-prev');
 const repeatBtn = $('.js-repeat');
@@ -129,7 +128,7 @@ const app = {
 		{
 			name: 'You are my everything',
 			singer: 'DonaldVN',
-			path: './assets/music/You Are My Everything - Billkin',
+			path: './assets/music/You Are My Everything - Billkin.mp3',
 			img: './assets/img/LogoV.png',
 		},
 	],
@@ -204,8 +203,6 @@ const app = {
 		progress.onchange = function (e) {
 			const seekTime = (audio.duration / 100) * e.target.value;
 			audio.currentTime = seekTime;
-
-			console.log();
 		};
 		nextBtn.onclick = function () {
 			if (_this.isRandom) {
@@ -227,12 +224,12 @@ const app = {
 			_this.render();
 			_this.scrollToActiveSong();
 		};
-		randomBtn.onclick = function (e) {
+		randomBtn.onclick = function () {
 			_this.isRandom = !_this.isRandom;
 			_this.setConfig('isRandom', _this.isRandom);
 			randomBtn.classList.toggle('active', _this.isRandom);
 		};
-		repeatBtn.onclick = function (e) {
+		repeatBtn.onclick = function () {
 			_this.isRepeat = !_this.isRepeat;
 			_this.setConfig('isRepeat', _this.isRepeat);
 			repeatBtn.classList.toggle('active', _this.isRepeat);
@@ -339,7 +336,6 @@ const app = {
 		this.render();
 
 		randomBtn.classList.toggle('active', this.isRandom);
-		repeatBtn.classList.toggle('active', this.isrepeat);
 	},
 };
 
